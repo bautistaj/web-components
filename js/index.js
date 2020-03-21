@@ -24,14 +24,16 @@ async function getCharacters(url) {
 
     nextUrl = json.info.next;
 
-    if(nextUrl){
-        const main = document.querySelector('main');
-        json.results.forEach(character => {
-        const el = document.createElement('btaj-card');
-        el.character = character;
-        main.appendChild(el);
-      });
-    }
+    const main = document.querySelector('main');
+    
+    json.results.forEach(character => {
+      const el = document.createElement('btaj-card');
+      el.character = character;
+      main.appendChild(el);
+    });
+    
+    nextUrl = json.info.next;
+
   } catch (error) {
     alert(error.message);
   }
