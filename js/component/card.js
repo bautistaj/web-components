@@ -6,6 +6,7 @@ class btajCard extends HTMLElement {
 
   set character({image, name, species}){
     const style = document.createElement('style');
+    
     style.textContent=`
       figure, p,h1 {
         padding: 0;
